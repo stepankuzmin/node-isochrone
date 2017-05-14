@@ -1,10 +1,9 @@
 # Isochrone
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/stepankuzmin/node-isochrone.svg)](https://greenkeeper.io/)
-
 [![npm version](https://img.shields.io/npm/v/isochrone.svg)](https://www.npmjs.com/package/isochrone)
-[![Build Status](https://travis-ci.org/stepankuzmin/node-isochrone.svg?branch=master)](https://travis-ci.org/stepankuzmin/node-isochrone)
 [![npm downloads](https://img.shields.io/npm/dt/isochrone.svg)](https://www.npmjs.com/package/galton)
+[![Build Status](https://travis-ci.org/stepankuzmin/node-isochrone.svg?branch=master)](https://travis-ci.org/stepankuzmin/node-isochrone)
+[![Greenkeeper badge](https://badges.greenkeeper.io/stepankuzmin/node-isochrone.svg)](https://greenkeeper.io/)
 
 Isochrone maps are commonly used to depict areas of equal travel time.
 Build isochrones using [OSRM](http://project-osrm.org/), [Turf](http://turfjs.org/) and [concaveman](https://github.com/mapbox/concaveman).

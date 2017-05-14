@@ -1,5 +1,7 @@
 # Isochrone
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/stepankuzmin/node-isochrone.svg)](https://greenkeeper.io/)
+
 [![npm version](https://img.shields.io/npm/v/isochrone.svg)](https://www.npmjs.com/package/isochrone)
 [![Build Status](https://travis-ci.org/stepankuzmin/node-isochrone.svg?branch=master)](https://travis-ci.org/stepankuzmin/node-isochrone)
 [![npm downloads](https://img.shields.io/npm/dt/isochrone.svg)](https://www.npmjs.com/package/galton)

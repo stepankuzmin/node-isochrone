@@ -2,6 +2,7 @@ const buffer = require('@turf/buffer');
 const concaveman = require('concaveman');
 const pointGrid = require('@turf/point-grid');
 const rewind = require('geojson-rewind');
+const deintersect = require('turf-deintersect');
 
 const makeGrid = (startPoint, options) => {
   const point = {
@@ -111,7 +112,8 @@ const isochrone = (startPoint, options) => {
         const travelTime = table.durations[0] || [];
         const pointsByInterval = groupByInterval(table.destinations, options.intervals, travelTime);
 
-        const features = makePolygons(pointsByInterval, options);
+        const polygons = makePolygons(pointsByInterval, options);
+        const features = deintersect(polygons);
         const featureCollection = rewind({ type: 'FeatureCollection', features });
         resolve(featureCollection);
       } catch (e) {

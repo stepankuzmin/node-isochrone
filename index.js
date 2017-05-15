@@ -77,6 +77,25 @@ const makePolygons = (pointsByInterval, options) =>
  * [concaveman](https://github.com/mapbox/concaveman)
  * @param {string} [options.units='kilometers'] - any of the options supported by turf units
  * @returns {Promise} GeoJSON FeatureCollection of Polygons when resolved
+ *
+ * @example
+ * const OSRM = require('osrm');
+ * const isochrone = require('isochrone');
+ *
+ * const osrm = new OSRM({ path: './monaco.osrm' });
+ * const startPoint = [7.41337, 43.72956];
+ *
+ * const options = {
+ *   osrm,
+ *   radius: 2,
+ *   cellSize: 0.1,
+ *   intervals: [5, 10, 15],
+ * };
+ *
+ * isochrone(startPoint, options)
+ *   .then((geojson) => {
+ *     console.log(JSON.stringify(geojson));
+ *   });
  */
 const isochrone = (startPoint, options) => {
   const endPoints = makeGrid(startPoint, options);

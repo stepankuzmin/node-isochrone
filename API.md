@@ -12,7 +12,7 @@ Build isochrone using start point and options
 
 -   `startPoint` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;float>** start point [lng, lat]
 -   `options` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** object
-    -   `options.osrm` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** [osrm](https://github.com/Project-OSRM/osrm-backend) instance
+    -   `options.osrm` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** [OSRM](https://github.com/Project-OSRM/osrm-backend) instance
     -   `options.radius` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** distance to draw the buffer as in
         [@turf/buffer](https://github.com/Turfjs/turf/tree/master/packages/turf-buffer)
     -   `options.cellSize` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** the distance across each cell as in
@@ -24,4 +24,26 @@ Build isochrone using start point and options
         [concaveman](https://github.com/mapbox/concaveman) (optional, default `0`)
     -   `options.units` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** any of the options supported by turf units (optional, default `'kilometers'`)
 
-Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)** promise with GeoJSON when resolved
+**Examples**
+
+```javascript
+const OSRM = require('osrm');
+const isochrone = require('isochrone');
+
+const osrm = new OSRM({ path: './monaco.osrm' });
+const startPoint = [7.41337, 43.72956];
+
+const options = {
+  osrm,
+  radius: 2,
+  cellSize: 0.1,
+  intervals: [5, 10, 15],
+};
+
+isochrone(startPoint, options)
+  .then((geojson) => {
+    console.log(JSON.stringify(geojson));
+  });
+```
+
+Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)** GeoJSON FeatureCollection of Polygons when resolved

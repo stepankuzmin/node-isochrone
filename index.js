@@ -63,7 +63,6 @@ const makePolygons = (pointsByInterval, options) =>
 /**
  * Build isochrone using start point and options
  *
- * @name isochrone
  * @param {Array.<float>} startPoint start point [lng, lat]
  * @param {Object} options object
  * @param {Object} options.osrm - [OSRM](https://github.com/Project-OSRM/osrm-backend) instance

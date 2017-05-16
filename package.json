@@ -8,9 +8,9 @@
   "jsnext:main": "src/server.js",
   "scripts": {
     "commit": "git-cz",
-    "release": "standard-version",
-    "docs": "documentation build index.js --format md --output API.md",
+    "docs": "documentation build index.js -o docs -f html --github --name isochrone",
     "lint": "eslint .",
+    "release": "standard-version",
     "test": "node test/index.js"
   },
   "config": {

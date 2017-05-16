@@ -38,4 +38,4 @@ isochrone(startPoint, options)
   });
 ```
 
-See [API](https://github.com/stepankuzmin/node-isochrone/blob/master/API.md) for more info.
+See [API](https://stepankuzmin.github.io/node-isochrone) for more info.

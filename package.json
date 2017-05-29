@@ -30,7 +30,7 @@
     "@turf/point-grid": "4.3.0",
     "concaveman": "1.1.1",
     "geojson-rewind": "0.2.0",
-    "turf-deintersect": "1.0.1"
+    "turf-deintersect": "1.0.0"
   },
   "peerDependencies": {
     "osrm": "5.7.2"

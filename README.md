@@ -16,26 +16,38 @@ Build isochrones using [OSRM](http://project-osrm.org/), [Turf](http://turfjs.or
 npm install -g isochrone
 ```
 
+## Build graph
+
+```shell
+wget https://s3.amazonaws.com/metro-extracts.mapzen.com/moscow_russia.osm.pbf
+./node_modules/osrm/lib/binding/osrm-extract -p ./node_modules/osrm/profiles/foot.lua moscow_russia.osm.pbf
+./node_modules/osrm/lib/binding/osrm-contract moscow_russia.osrm
+```
+
 ## Usage
 
 ```js
 const OSRM = require('osrm');
 const isochrone = require('isochrone');
 
-const osrm = new OSRM({ path: './monaco.osrm' });
-const startPoint = [7.41337, 43.72956];
+const osrm = new OSRM({ algorithm: 'CH', path: './moscow_russia.osrm' });
+const startPoint = [37.62, 55.75];
 
 const options = {
   osrm,
   radius: 2,
   cellSize: 0.1,
-  intervals: [5, 10, 15],
+  intervals: [5, 10, 15]
 };
 
 isochrone(startPoint, options)
   .then((geojson) => {
-    console.log(JSON.stringify(geojson));
+    console.log(JSON.stringify(geojson, null, 2));
+  })
+  .catch((error) => {
+    console.error(error);
   });
+
 ```
 
 See [API](https://stepankuzmin.github.io/node-isochrone) for more info.

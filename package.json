@@ -4,8 +4,7 @@
   "description": "",
   "author": "Stepan Kuzmin <to.stepan.kuzmin@gmail.com> (stepankuzmin.ru)",
   "license": "MIT",
-  "main": "dist/bundle.js",
-  "jsnext:main": "src/server.js",
+  "main": "index.js",
   "scripts": {
     "commit": "git-cz",
     "docs": "documentation build index.js -o docs -f html --github --name isochrone",
@@ -34,7 +33,7 @@
     "turf-deintersect": "1.0.1"
   },
   "peerDependencies": {
-    "osrm": "5.7.1"
+    "osrm": "5.7.2"
   },
   "devDependencies": {
     "@mapbox/geojsonhint": "2.0.1",
@@ -44,7 +43,7 @@
     "eslint": "3.19.0",
     "eslint-config-airbnb-base": "11.2.0",
     "eslint-plugin-import": "2.3.0",
-    "osrm": "5.7.1",
+    "osrm": "5.7.2",
     "standard-version": "4.0.0",
     "tape": "4.6.3"
   }

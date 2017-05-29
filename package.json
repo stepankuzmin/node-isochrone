@@ -1,8 +1,9 @@
 {
   "name": "isochrone",
   "version": "1.0.0",
-  "description": "",
+  "description": "isochrone map library",
   "author": "Stepan Kuzmin <to.stepan.kuzmin@gmail.com> (stepankuzmin.ru)",
+  "homepage": "https://github.com/stepankuzmin/node-isochrone",
   "license": "MIT",
   "main": "index.js",
   "scripts": {
@@ -21,9 +22,20 @@
   "engines": {
     "node": "4"
   },
+  "keywords": [
+    "isochrone",
+    "drivetime",
+    "walktime",
+    "geojson",
+    "polygon",
+    "osrm"
+  ],
   "repository": {
     "type": "git",
     "url": "git://github.com/stepankuzmin/node-isochrone.git"
+  },
+  "bugs": {
+    "url": "https://github.com/stepankuzmin/node-isochrone/issues"
   },
   "dependencies": {
     "@turf/buffer": "4.3.1",

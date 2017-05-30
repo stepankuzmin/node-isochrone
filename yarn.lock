@@ -12,38 +12,13 @@
     vfile "2.0.0"
     vfile-reporter "3.0.0"
 
-"@turf/bbox@^4.3.0":
+"@turf/bbox@4.3.0", "@turf/bbox@^4.3.0":
   version "4.3.0"
   resolved "https://registry.yarnpkg.com/@turf/bbox/-/bbox-4.3.0.tgz#644c4b745172d21aae70d1584b2a7866f1040865"
   dependencies:
     "@turf/meta" "^4.3.0"
 
-"@turf/buffer@4.3.1":
-  version "4.3.1"
-  resolved "https://registry.yarnpkg.com/@turf/buffer/-/buffer-4.3.1.tgz#f80fdd4377eef8c2d5dcaded928bb7293f89129d"
-  dependencies:
-    "@turf/center" "^4.3.0"
-    "@turf/circle" "^4.3.0"
-    "@turf/helpers" "^4.3.0"
-    "@turf/meta" "^4.3.0"
-    d3-geo "^1.6.3"
-    jsts "1.3.0"
-
-"@turf/center@^4.3.0":
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/@turf/center/-/center-4.3.0.tgz#9587959d3c1717fb99b7a53c878aaa571009fbb4"
-  dependencies:
-    "@turf/bbox" "^4.3.0"
-    "@turf/helpers" "^4.3.0"
-
-"@turf/circle@^4.3.0":
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/@turf/circle/-/circle-4.3.0.tgz#170bdcd8b04c09ba18d9ec5654a128966057c1f3"
-  dependencies:
-    "@turf/destination" "^4.3.0"
-    "@turf/helpers" "^4.3.0"
-
-"@turf/destination@^4.3.0":
+"@turf/destination@4.3.0":
   version "4.3.0"
   resolved "https://registry.yarnpkg.com/@turf/destination/-/destination-4.3.0.tgz#46ec6bdf7e41728a3a2f4dcb50d0c506a5b954de"
   dependencies:
@@ -1474,16 +1449,6 @@ cz-conventional-changelog@2.0.0:
     pad-right "^0.2.2"
     right-pad "^1.0.1"
     word-wrap "^1.0.3"
-
-d3-array@1:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/d3-array/-/d3-array-1.2.0.tgz#147d269720e174c4057a7f42be8b0f3f2ba53108"
-
-d3-geo@^1.6.3:
-  version "1.6.4"
-  resolved "https://registry.yarnpkg.com/d3-geo/-/d3-geo-1.6.4.tgz#f20e1e461cb1845f5a8be55ab6f876542a7e3199"
-  dependencies:
-    d3-array "1"
 
 d@1:
   version "1.0.0"
@@ -3414,9 +3379,9 @@ osenv@^0.1.4:
     os-homedir "^1.0.0"
     os-tmpdir "^1.0.0"
 
-osrm@5.7.2:
-  version "5.7.2"
-  resolved "https://registry.yarnpkg.com/osrm/-/osrm-5.7.2.tgz#3b3ca51984d06cbf0f32dd96873e7792338bd9c9"
+osrm@5.7.3:
+  version "5.7.3"
+  resolved "https://registry.yarnpkg.com/osrm/-/osrm-5.7.3.tgz#472bc4eac3527260869c8b6d4da54e3f6b30cdd4"
   dependencies:
     nan "^2.1.0"
     node-cmake "^2.2.1"
@@ -3521,6 +3486,10 @@ path-is-absolute@^1.0.0:
 path-is-inside@^1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/path-is-inside/-/path-is-inside-1.0.2.tgz#365417dede44430d1c11af61027facf074bdfc53"
+
+path-parse@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/path-parse/-/path-parse-1.0.5.tgz#3c1adf871ea9cd6c9431b6ea2bd74a0ff055c4c1"
 
 path-platform@~0.11.15:
   version "0.11.15"
@@ -3963,9 +3932,15 @@ resolve-from@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/resolve-from/-/resolve-from-1.0.1.tgz#26cbfe935d1aeeeabb29bc3fe5aeb01e93d44226"
 
-resolve@1.1.7, resolve@^1.1.3, resolve@^1.1.6, resolve@~1.1.7:
+resolve@1.1.7, resolve@~1.1.7:
   version "1.1.7"
   resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.1.7.tgz#203114d82ad2c5ed9e8e0411b3932875e889e97b"
+
+resolve@^1.1.3, resolve@^1.1.6:
+  version "1.3.3"
+  resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.3.3.tgz#655907c3469a8680dc2de3a275a8fdd69691f0e5"
+  dependencies:
+    path-parse "^1.0.5"
 
 restore-cursor@^1.0.1:
   version "1.0.1"

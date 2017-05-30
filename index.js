@@ -1,6 +1,7 @@
-const buffer = require('@turf/buffer');
+const bbox = require('@turf/bbox');
 const concaveman = require('concaveman');
 const deintersect = require('turf-deintersect');
+const destination = require('@turf/destination');
 const helpers = require('@turf/helpers');
 const pointGrid = require('@turf/point-grid');
 const rewind = require('geojson-rewind');
@@ -8,8 +9,15 @@ const rewind = require('geojson-rewind');
 const makeGrid = (startPoint, options) => {
   const point = helpers.point(startPoint);
 
-  const buffered = buffer(point, options.radius, options.unit);
-  const grid = pointGrid(buffered, options.cellSize, options.units);
+  const spokes = helpers.featureCollection([
+    destination(point, options.radius, 180, options.unit),
+    destination(point, options.radius, 0, options.unit),
+    destination(point, options.radius, 90, options.unit),
+    destination(point, options.radius, -90, options.unit)
+  ]);
+
+  const bboxGrid = bbox(spokes);
+  const grid = pointGrid(bboxGrid, options.cellSize, options.units);
 
   return grid.features.map(feature => feature.geometry.coordinates);
 };

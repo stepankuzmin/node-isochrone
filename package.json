@@ -46,7 +46,7 @@
     "turf-deintersect": "1.0.0"
   },
   "peerDependencies": {
-    "osrm": "5.7.2"
+    "osrm": "5.7.3"
   },
   "devDependencies": {
     "@mapbox/geojsonhint": "2.0.1",

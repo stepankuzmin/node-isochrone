@@ -1,17 +1,12 @@
 const buffer = require('@turf/buffer');
 const concaveman = require('concaveman');
+const deintersect = require('turf-deintersect');
+const helpers = require('@turf/helpers');
 const pointGrid = require('@turf/point-grid');
 const rewind = require('geojson-rewind');
-const deintersect = require('turf-deintersect');
 
 const makeGrid = (startPoint, options) => {
-  const point = {
-    type: 'Feature',
-    geometry: {
-      type: 'Point',
-      coordinates: startPoint
-    }
-  };
+  const point = helpers.point(startPoint);
 
   const buffered = buffer(point, options.radius, options.unit);
   const grid = pointGrid(buffered, options.cellSize, options.units);
@@ -20,9 +15,10 @@ const makeGrid = (startPoint, options) => {
 };
 
 const groupByInterval = (destinations, intervals, travelTime) => {
-  const intervalGroups = intervals.reduce((acc, interval) =>
-    Object.assign({}, acc, { [interval]: [] })
-  , {});
+  const intervalGroups = intervals.reduce(
+    (acc, interval) => Object.assign({}, acc, { [interval]: [] }),
+    {}
+  );
 
   const pointsByInterval = travelTime.reduce((acc, time, index) => {
     const timem = Math.round(time / 60);
@@ -37,18 +33,12 @@ const groupByInterval = (destinations, intervals, travelTime) => {
 };
 
 const makePolygon = (points, interval, options) => {
-  const concave = concaveman(points, options.concavity, options.lengthThreshold);
-
-  return {
-    type: 'Feature',
-    geometry: {
-      type: 'Polygon',
-      coordinates: [concave]
-    },
-    properties: {
-      time: parseFloat(interval)
-    }
-  };
+  const concave = concaveman(
+    points,
+    options.concavity,
+    options.lengthThreshold
+  );
+  return helpers.polygon([concave], { time: parseFloat(interval) });
 };
 
 const makePolygons = (pointsByInterval, options) =>
@@ -109,11 +99,15 @@ const isochrone = (startPoint, options) => {
 
       try {
         const travelTime = table.durations[0] || [];
-        const pointsByInterval = groupByInterval(table.destinations, options.intervals, travelTime);
+        const pointsByInterval = groupByInterval(
+          table.destinations,
+          options.intervals,
+          travelTime
+        );
 
         const polygons = makePolygons(pointsByInterval, options);
         const features = deintersect(polygons);
-        const featureCollection = rewind({ type: 'FeatureCollection', features });
+        const featureCollection = rewind(helpers.featureCollection(features));
         resolve(featureCollection);
       } catch (e) {
         reject(e);

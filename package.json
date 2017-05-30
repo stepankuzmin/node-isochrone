@@ -39,6 +39,7 @@
   },
   "dependencies": {
     "@turf/buffer": "4.3.1",
+    "@turf/helpers": "4.3.0",
     "@turf/point-grid": "4.3.0",
     "concaveman": "1.1.1",
     "geojson-rewind": "0.2.0",

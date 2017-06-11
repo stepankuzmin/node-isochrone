@@ -1,20 +1,21 @@
 language: node_js
+
 dist: trusty
+
 sudo: required
 
 addons:
   apt:
-    sources:
-      - ubuntu-toolchain-r-test
-    packages:
-      - g++-4.8
+    sources: ['ubuntu-toolchain-r-test']
+    packages: ['g++-6', 'libbz2-dev', 'libstxxl-dev', 'libstxxl1', 'libxml2-dev', 'libzip-dev', 'lua5.1', 'liblua5.1-0-dev', 'libtbb-dev', 'libgdal-dev', 'libluabind-dev', 'libboost-all-dev']
 
 branches:
   except:
     - /^v[0-9]/
 
-node_js: 4
-
+node_js:
+  - "4"
+  - "6"
 
 before_install: yarn global add greenkeeper-lockfile@1
 install: yarn

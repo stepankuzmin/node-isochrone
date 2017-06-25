@@ -20,7 +20,7 @@
   },
   "engine-strict": true,
   "engines": {
-    "node": ">=4"
+    "node": ">=6"
   },
   "keywords": [
     "isochrone",

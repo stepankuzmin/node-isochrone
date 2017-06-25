@@ -4,9 +4,11 @@ const OSRM = require('osrm');
 const geojsonhint = require('@mapbox/geojsonhint');
 const isochrone = require('../index');
 
-const points = [[7.41337, 43.72956],
-                [7.41546, 43.73077],
-                [7.41862, 43.73216]];
+const points = [
+  [7.41337, 43.72956],
+  [7.41546, 43.73077],
+  [7.41862, 43.73216]
+];
 
 const osrmPath = path.join(__dirname, './data/monaco.osrm');
 const osrm = new OSRM({ path: osrmPath });

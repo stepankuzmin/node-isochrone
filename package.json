@@ -57,7 +57,7 @@
     "eslint": "3.19.0",
     "eslint-config-airbnb-base": "11.2.0",
     "eslint-plugin-import": "2.6.0",
-    "osrm": "5.8.0",
+    "osrm": "5.8.1",
     "standard-version": "4.2.0",
     "tape": "4.7.0"
   }

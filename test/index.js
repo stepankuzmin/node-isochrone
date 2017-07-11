@@ -28,12 +28,10 @@ const options = {
 
 // For argument array intervals: [5, 10, 15, 20]
 // Gives: [ [5,10], [5,15], [5,20], [10,15], [10,20], [15,20] ]
-function increasingPairs(intervals) {
-  return intervals.map(i => ({ lhs: i, rhs: intervals.filter(x => x > i) }))
-    .map(z => z.rhs.map(r => [z.lhs, r]))
-    .reduce((x, y) => x.concat(y), []);
-}
-const testPairs = increasingPairs(options.intervals);
+const testPairs = options.intervals
+  .map(i => ({ head: i, tail: options.intervals.filter(x => x > i) }))
+  .map(z => z.tail.map(t => [z.head, t]))
+  .reduce((x, y) => x.concat(y), []);
 
 
 test('isochrone', (t) => {

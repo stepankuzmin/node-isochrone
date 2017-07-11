@@ -59,7 +59,7 @@ test('deintersected isochrone', (t) => {
           const [small, large] = [isochrones[minSmall], isochrones[minLarge]];
           const intersection = intersect(small, large);
           const areaIntersection = intersection ? area(intersection) : 0;
-          // assert that the small isochrone overlaps over 90% with the large
+          // assert that there is no intersection between isochrones
           if (areaIntersection < 1e-7) {
             t.pass(`Isochrone ${minSmall} does not intersect ${minLarge}`);
           } else {

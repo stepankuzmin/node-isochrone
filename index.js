@@ -23,21 +23,15 @@ const makeGrid = (startPoint, options) => {
 };
 
 const groupByInterval = (destinations, intervals, travelTime) => {
-  const intervalGroups = intervals.reduce(
-    (acc, interval) => Object.assign({}, acc, { [interval]: [] }),
-    {}
-  );
-
-  const pointsByInterval = travelTime.reduce((acc, time, index) => {
-    const timem = Math.round(time / 60);
-    const ceil = intervals.find(interval => timem <= interval);
-    if (ceil) {
-      acc[ceil].push(destinations[index].location);
-    }
-    return acc;
-  }, intervalGroups);
-
-  return pointsByInterval;
+  // returns { int1: [points...], int2: [points...], ... }
+  const groups = {};
+  intervals.forEach((interval) => {
+    const points = destinations.filter((point, index) => (
+      travelTime[index] <= (interval * 60))
+    ).map(d => d.location);
+    groups[interval] = points;
+  });
+  return groups;
 };
 
 const makePolygon = (points, interval, options) => {

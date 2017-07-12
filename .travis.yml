@@ -12,9 +12,9 @@ cache:
 addons:
   apt:
     sources: ['ubuntu-toolchain-r-test']
-    packages: ['g++-6', 'libbz2-dev', 'libstxxl-dev', 'libstxxl1', 'libxml2-dev', 'libzip-dev', 'lua5.1', 'liblua5.1-0-dev', 'libtbb-dev', 'libgdal-dev', 'libluabind-dev', 'libboost-all-dev']
+    packages: ['g++-6', 'gcc-6', 'build-essential', 'git', 'wget', 'cmake3', 'pkg-config', 'libbz2-dev', 'libstxxl-dev', 'libstxxl1', 'libxml2-dev', 'libzip-dev', 'libboost-all-dev', 'lua5.2', 'liblua5.2-dev', 'libtbb-dev']
 
-env: CCOMPILER='gcc-6' CXXCOMPILER='g++-6'
+env: CPP=cpp-6 CC=gcc-6 CXX=g++-6
 
 branches:
   except:
@@ -22,6 +22,8 @@ branches:
 
 node_js:
   - "6"
+  - "7"
+  - "8"
 
 before_install: yarn global add greenkeeper-lockfile@1
 install: yarn

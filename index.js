@@ -23,23 +23,19 @@ const makeGrid = (startPoint, options) => {
 };
 
 const groupByInterval = (destinations, intervals, travelTime) => {
-  // returns { int1: [points...], int2: [points...], ... }
   const groups = {};
   intervals.forEach((interval) => {
-    const points = destinations.filter((point, index) => (
-      travelTime[index] <= (interval * 60))
-    ).map(d => d.location);
+    const points = destinations
+      .filter((point, index) => travelTime[index] <= interval * 60)
+      .map(d => d.location);
+
     groups[interval] = points;
   });
   return groups;
 };
 
 const makePolygon = (points, interval, options) => {
-  const concave = concaveman(
-    points,
-    options.concavity,
-    options.lengthThreshold
-  );
+  const concave = concaveman(points, options.concavity, options.lengthThreshold);
   return helpers.polygon([concave], { time: parseFloat(interval) });
 };
 
@@ -84,6 +80,7 @@ const makePolygons = (pointsByInterval, options) =>
  *   radius: 2,
  *   cellSize: 0.1,
  *   intervals: [5, 10, 15],
+ *   deintersect: true
  * };
  *
  * isochrone(startPoint, options)
@@ -103,15 +100,13 @@ const isochrone = (startPoint, options) => {
 
       try {
         const travelTime = table.durations[0] || [];
-        const pointsByInterval = groupByInterval(
-          table.destinations,
-          options.intervals,
-          travelTime
-        );
 
+        const pointsByInterval = groupByInterval(table.destinations, options.intervals, travelTime);
         const polygons = makePolygons(pointsByInterval, options);
+
         const features = options.deintersect ? deintersect(polygons) : polygons;
         const featureCollection = rewind(helpers.featureCollection(features));
+
         resolve(featureCollection);
       } catch (e) {
         reject(e);

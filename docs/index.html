@@ -53,7 +53,7 @@
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/stepankuzmin/node-isochrone/blob/81056a469f4a14985e34352eb8487f4cdb5d0810/index.js#L98-L125'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/stepankuzmin/node-isochrone/blob/cbbd5c31175b2b61f7703a984e40a45f37c748c7/index.js#L91-L116'>
       <span>index.js</span>
       </a>
     
@@ -144,6 +144,14 @@ lng, lat
                 </tr>
               
                 <tr>
+                  <td class='break-word'><span class='code bold'>options.deintersect</span> <code class='quiet'><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>
+                  </td>
+                  <td class='break-word'><span>whether or not to deintersect the isochrones.
+If this is true, then the isochrones will be mutually exclusive
+</span></td>
+                </tr>
+              
+                <tr>
                   <td class='break-word'><span class='code bold'>options.concavity</span> <code class='quiet'><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>
                   
                     (default <code>2</code>)
@@ -211,6 +219,7 @@ lng, lat
   <span class="hljs-attr">radius</span>: <span class="hljs-number">2</span>,
   <span class="hljs-attr">cellSize</span>: <span class="hljs-number">0.1</span>,
   <span class="hljs-attr">intervals</span>: [<span class="hljs-number">5</span>, <span class="hljs-number">10</span>, <span class="hljs-number">15</span>],
+  <span class="hljs-attr">deintersect</span>: <span class="hljs-literal">true</span>
 };
 
 isochrone(startPoint, options)

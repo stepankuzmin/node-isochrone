@@ -25,14 +25,12 @@ const options = {
   units: 'kilometers'
 };
 
-
 // For argument array intervals: [5, 10, 15, 20]
 // Gives: [ [5,10], [5,15], [5,20], [10,15], [10,20], [15,20] ]
 const testPairs = options.intervals
   .map(i => ({ head: i, tail: options.intervals.filter(x => x > i) }))
   .map(z => z.tail.map(t => [z.head, t]))
   .reduce((x, y) => x.concat(y), []);
-
 
 test('deintersected isochrone', (t) => {
   t.plan(points.length * (1 + testPairs.length));
@@ -70,7 +68,6 @@ test('deintersected isochrone', (t) => {
       .catch(error => t.error(error, 'No error'))
   );
 });
-
 
 test('isochrone', (t) => {
   t.plan(points.length * (1 + testPairs.length));

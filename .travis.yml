@@ -22,7 +22,6 @@ branches:
 
 node_js:
   - "6"
-  - "8"
 
 before_install: yarn global add greenkeeper-lockfile@1
 install: yarn

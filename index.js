@@ -23,21 +23,15 @@ const makeGrid = (startPoint, options) => {
 };
 
 const groupByInterval = (destinations, intervals, travelTime) => {
-  const intervalGroups = intervals.reduce(
-    (acc, interval) => Object.assign({}, acc, { [interval]: [] }),
-    {}
-  );
-
-  const pointsByInterval = travelTime.reduce((acc, time, index) => {
-    const timem = Math.round(time / 60);
-    const ceil = intervals.find(interval => timem <= interval);
-    if (ceil) {
-      acc[ceil].push(destinations[index].location);
-    }
-    return acc;
-  }, intervalGroups);
-
-  return pointsByInterval;
+  // returns { int1: [points...], int2: [points...], ... }
+  const groups = {};
+  intervals.forEach((interval) => {
+    const points = destinations.filter((point, index) => (
+      travelTime[index] <= (interval * 60))
+    ).map(d => d.location);
+    groups[interval] = points;
+  });
+  return groups;
 };
 
 const makePolygon = (points, interval, options) => {
@@ -69,6 +63,8 @@ const makePolygons = (pointsByInterval, options) =>
  * @param {number} options.cellSize - the distance across each cell as in
  * [@turf/point-grid](https://github.com/Turfjs/turf/tree/master/packages/turf-point-grid)
  * @param {Array.<number>} options.intervals - intervals for isochrones in minutes
+ * @param {boolean} options.deintersect - whether or not to deintersect the isochrones.
+ * If this is true, then the isochrones will be mutually exclusive
  * @param {number} [options.concavity=2] - relative measure of concavity as in
  * [concaveman](https://github.com/mapbox/concaveman)
  * @param {number} [options.lengthThreshold=0] - length threshold as in
@@ -114,7 +110,7 @@ const isochrone = (startPoint, options) => {
         );
 
         const polygons = makePolygons(pointsByInterval, options);
-        const features = deintersect(polygons);
+        const features = options.deintersect ? deintersect(polygons) : polygons;
         const featureCollection = rewind(helpers.featureCollection(features));
         resolve(featureCollection);
       } catch (e) {

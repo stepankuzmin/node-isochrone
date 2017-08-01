@@ -61,6 +61,6 @@
     "eslint-plugin-import": "2.7.0",
     "osrm": "5.9.2",
     "standard-version": "4.2.0",
-    "tape": "4.7.0"
+    "tape": "4.8.0"
   }
 }

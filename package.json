@@ -8,7 +8,7 @@
   "main": "index.js",
   "scripts": {
     "commit": "git-cz",
-    "docs": "documentation build index.js -o docs -f html --github --name isochrone",
+    "docs": "documentation build index.js -g --markdown-toc false -f md -o API.md",
     "lint": "eslint .",
     "release": "standard-version",
     "test": "node test/index.js"

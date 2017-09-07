@@ -27,8 +27,7 @@ const groupByInterval = (destinations, intervals, travelTime) => {
   intervals.forEach((interval) => {
     const points = destinations
       .filter((point, index) => (
-        travelTime[index] !== null && travelTime[index] <= interval * 60)
-      )
+        travelTime[index] !== null && travelTime[index] <= interval * 60))
       .map(d => d.location);
 
     groups[interval] = points;

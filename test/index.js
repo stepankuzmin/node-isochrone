@@ -49,8 +49,7 @@ test('deintersected isochrone', (t) => {
           Object.assign({}, acc, {
             [interval]: geojson.features
               .find(iso => iso.properties.time === interval)
-          })), {}
-        );
+          })), {});
         // test that every smaller isochrone is contained by a larger one
         testPairs.forEach((minutePair) => {
           const [minSmall, minLarge] = minutePair;
@@ -65,8 +64,7 @@ test('deintersected isochrone', (t) => {
           }
         });
       })
-      .catch(error => t.error(error, 'No error'))
-  );
+      .catch(error => t.error(error, 'No error')));
 });
 
 test('isochrone', (t) => {
@@ -86,8 +84,7 @@ test('isochrone', (t) => {
           Object.assign({}, acc, {
             [interval]: geojson.features
               .find(iso => iso.properties.time === interval)
-          })), {}
-        );
+          })), {});
         // test that every smaller isochrone is contained by a larger one
         testPairs.forEach((minutePair) => {
           const [minSmall, minLarge] = minutePair;
@@ -102,6 +99,5 @@ test('isochrone', (t) => {
           }
         });
       })
-      .catch(error => t.error(error, 'No error'))
-  );
+      .catch(error => t.error(error, 'No error')));
 });

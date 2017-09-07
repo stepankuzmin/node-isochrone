@@ -2,7 +2,7 @@
 
 ## isochrone
 
-[index.js:93-118](https://github.com/stepankuzmin/node-isochrone/blob/72a8722ecb7d52404b66d685d937a88197b07a4d/index.js#L93-L118 "Source code on GitHub")
+[index.js:92-117](https://github.com/stepankuzmin/node-isochrone/blob/18be5c027ae4d71c6dc92db5008d844195b3f8b7/index.js#L92-L117 "Source code on GitHub")
 
 Build isochrone using start point and options
 

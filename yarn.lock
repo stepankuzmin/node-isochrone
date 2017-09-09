@@ -1803,9 +1803,9 @@ doctrine@^2.0.0:
     esutils "^2.0.2"
     isarray "^1.0.0"
 
-documentation@5.3.0:
-  version "5.3.0"
-  resolved "https://registry.yarnpkg.com/documentation/-/documentation-5.3.0.tgz#6973aa40bd75f065e7def1df51dbbab86637cfa4"
+documentation@5.3.1:
+  version "5.3.1"
+  resolved "https://registry.yarnpkg.com/documentation/-/documentation-5.3.1.tgz#f7fda4b65ad96b7686976173b0c573f53448ed3e"
   dependencies:
     ansi-html "^0.0.7"
     babel-core "^6.17.0"
@@ -1973,9 +1973,9 @@ eslint-scope@^3.7.1:
     esrecurse "^4.1.0"
     estraverse "^4.1.1"
 
-eslint@4.6.0:
-  version "4.6.0"
-  resolved "https://registry.yarnpkg.com/eslint/-/eslint-4.6.0.tgz#98ced4a706a87abbe63207895d0023a38e250bbe"
+eslint@4.6.1:
+  version "4.6.1"
+  resolved "https://registry.yarnpkg.com/eslint/-/eslint-4.6.1.tgz#ddc7fc7fd70bf93205b0b3449bb16a1e9e7d4950"
   dependencies:
     ajv "^5.2.0"
     babel-code-frame "^6.22.0"

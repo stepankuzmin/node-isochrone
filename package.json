@@ -41,7 +41,7 @@
     "@turf/bbox": "4.7.3",
     "@turf/destination": "4.7.3",
     "@turf/helpers": "4.7.3",
-    "@turf/point-grid": "4.6.0",
+    "@turf/point-grid": "4.7.3",
     "concaveman": "1.1.1",
     "geojson-rewind": "0.2.0",
     "turf-deintersect": "1.0.1"

@@ -38,7 +38,7 @@
     "url": "https://github.com/stepankuzmin/node-isochrone/issues"
   },
   "dependencies": {
-    "@turf/bbox": "4.6.0",
+    "@turf/bbox": "4.7.3",
     "@turf/destination": "4.6.0",
     "@turf/helpers": "4.7.3",
     "@turf/point-grid": "4.6.0",

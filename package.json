@@ -40,7 +40,7 @@
   "dependencies": {
     "@turf/bbox": "4.7.3",
     "@turf/destination": "4.7.3",
-    "@turf/helpers": "4.7.3",
+    "@turf/helpers": "5.0.0-alpha",
     "@turf/point-grid": "4.7.3",
     "concaveman": "1.1.1",
     "geojson-rewind": "0.2.0",

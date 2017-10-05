@@ -38,13 +38,13 @@
     "url": "https://github.com/stepankuzmin/node-isochrone/issues"
   },
   "dependencies": {
-    "@turf/bbox": "4.7.3",
-    "@turf/destination": "4.7.3",
-    "@turf/helpers": "4.7.3",
+    "@turf/bbox": "5.0.0",
+    "@turf/destination": "5.0.0",
+    "@turf/helpers": "5.0.0",
     "@turf/point-grid": "4.7.3",
     "concaveman": "1.1.1",
-    "geojson-rewind": "0.2.0",
-    "turf-deintersect": "1.0.1"
+    "geojson-rewind": "0.3.0",
+    "turf-deintersect": "1.0.2"
   },
   "peerDependencies": {
     "osrm": "^5.0"
@@ -52,14 +52,14 @@
   "devDependencies": {
     "@mapbox/geojsonhint": "2.0.1",
     "@turf/area": "4.7.3",
-    "@turf/intersect": "4.6.0",
+    "@turf/intersect": "4.7.4",
     "commitizen": "2.9.6",
     "cz-conventional-changelog": "2.0.0",
-    "documentation": "5.3.1",
-    "eslint": "4.6.1",
-    "eslint-config-airbnb-base": "12.0.0",
+    "documentation": "5.3.2",
+    "eslint": "4.8.0",
+    "eslint-config-airbnb-base": "12.0.2",
     "eslint-plugin-import": "2.7.0",
-    "osrm": "5.10.0",
+    "osrm": "5.12.0",
     "standard-version": "4.2.0",
     "tape": "4.8.0"
   }

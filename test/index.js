@@ -6,11 +6,7 @@ const intersect = require('@turf/intersect');
 const geojsonhint = require('@mapbox/geojsonhint');
 const isochrone = require('../index');
 
-const points = [
-  [7.41337, 43.72956],
-  [7.41546, 43.73077],
-  [7.41862, 43.73216]
-];
+const points = [[7.41337, 43.72956], [7.41546, 43.73077], [7.41862, 43.73216]];
 
 const osrmPath = path.join(__dirname, './data/monaco.osrm');
 const osrm = new OSRM({ path: osrmPath });
@@ -32,6 +28,11 @@ const testPairs = options.intervals
   .map(z => z.tail.map(t => [z.head, t]))
   .reduce((x, y) => x.concat(y), []);
 
+const getIntersectionArea = (a, b) => {
+  const intersection = intersect(a, b);
+  return intersection ? area(intersection) : 0;
+};
+
 test('deintersected isochrone', (t) => {
   t.plan(points.length * (1 + testPairs.length));
   points.forEach(point =>
@@ -45,19 +46,21 @@ test('deintersected isochrone', (t) => {
           t.pass('Valid GeoJSON');
         }
         // Gives { interval1: isochrone1, interval2: isochrone2, ... }
-        const isochrones = options.intervals.reduce((acc, interval) => (
-          Object.assign({}, acc, {
-            [interval]: geojson.features
-              .find(iso => iso.properties.time === interval)
-          })), {});
+        const isochrones = options.intervals.reduce(
+          (acc, interval) =>
+            Object.assign({}, acc, {
+              [interval]: geojson.features.find(iso => iso.properties.time === interval)
+            }),
+          {}
+        );
         // test that every smaller isochrone is contained by a larger one
         testPairs.forEach((minutePair) => {
           const [minSmall, minLarge] = minutePair;
           const [small, large] = [isochrones[minSmall], isochrones[minLarge]];
-          const intersection = intersect(small, large);
-          const areaIntersection = intersection ? area(intersection) : 0;
+          const areaIntersection = getIntersectionArea(small, large);
+
           // assert that there is no intersection between isochrones
-          if (areaIntersection < 1e-7) {
+          if (areaIntersection < 1) {
             t.pass(`Isochrone ${minSmall} does not intersect ${minLarge}`);
           } else {
             t.fail(`Isochrone ${minSmall} intersects with ${minLarge}`);
@@ -80,11 +83,13 @@ test('isochrone', (t) => {
           t.pass('Valid GeoJSON');
         }
         // Gives { interval1: isochrone1, interval2: isochrone2, ... }
-        const isochrones = options.intervals.reduce((acc, interval) => (
-          Object.assign({}, acc, {
-            [interval]: geojson.features
-              .find(iso => iso.properties.time === interval)
-          })), {});
+        const isochrones = options.intervals.reduce(
+          (acc, interval) =>
+            Object.assign({}, acc, {
+              [interval]: geojson.features.find(iso => iso.properties.time === interval)
+            }),
+          {}
+        );
         // test that every smaller isochrone is contained by a larger one
         testPairs.forEach((minutePair) => {
           const [minSmall, minLarge] = minutePair;
@@ -92,7 +97,7 @@ test('isochrone', (t) => {
           const intersection = intersect(small, large);
           const areaIntersection = intersection ? area(intersection) : 0;
           // assert that the small isochrone overlaps over 90% with the large
-          if ((areaIntersection / area(small)) > 0.9) {
+          if (areaIntersection / area(small) > 0.9) {
             t.pass(`Isochrone ${minSmall} is contained in ${minLarge}`);
           } else {
             t.fail(`Isochrone ${minSmall} is not contained in ${minLarge}`);

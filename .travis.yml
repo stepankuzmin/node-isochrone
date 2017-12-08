@@ -21,9 +21,10 @@ branches:
     - /^v[0-9]/
 
 node_js:
+  - "4"
   - "6"
-  - "7"
-  - "8"
+  # - "7"
+  # - "8"
 
 before_install: yarn global add greenkeeper-lockfile@1
 install: travis_wait 30 yarn

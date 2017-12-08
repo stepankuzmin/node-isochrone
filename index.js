@@ -17,7 +17,7 @@ const makeGrid = (startPoint, options) => {
   ]);
 
   const bboxGrid = bbox(spokes);
-  const grid = pointGrid(bboxGrid, options.cellSize, options.units);
+  const grid = pointGrid(bboxGrid, options.cellSize, { units: options.units });
 
   return grid.features.map(feature => feature.geometry.coordinates);
 };

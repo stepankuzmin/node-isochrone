@@ -63,7 +63,7 @@
     "@turf/helpers" "^5.1.0"
     "@turf/invariant" "^5.1.0"
 
-"@turf/clean-coords@^5.0.4":
+"@turf/clean-coords@^5.1.0":
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/@turf/clean-coords/-/clean-coords-5.1.0.tgz#0a4a418f8fcebe6a2e59ab7db8eb93b97d6c0471"
   dependencies:
@@ -94,7 +94,7 @@
     "@turf/helpers" "^5.1.0"
     "@turf/invariant" "^5.1.0"
 
-"@turf/helpers@5.1.0", "@turf/helpers@^5.0.4", "@turf/helpers@^5.1.0":
+"@turf/helpers@5.1.0", "@turf/helpers@^5.1.0":
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/@turf/helpers/-/helpers-5.1.0.tgz#e308698654dbf770b4af1395df84e43c492614bd"
 
@@ -102,21 +102,21 @@
   version "4.7.3"
   resolved "https://registry.yarnpkg.com/@turf/helpers/-/helpers-4.7.3.tgz#bc312ac43cab3c532a483151c4c382c5649429e9"
 
-"@turf/intersect@5.0.5":
-  version "5.0.5"
-  resolved "https://registry.yarnpkg.com/@turf/intersect/-/intersect-5.0.5.tgz#357f51be1e14738319c2f063f503a506b70249eb"
+"@turf/intersect@5.1.0":
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/@turf/intersect/-/intersect-5.1.0.tgz#3a080015a0a45ab0a89c1b0707ed59acc8147ac1"
   dependencies:
-    "@turf/clean-coords" "^5.0.4"
-    "@turf/helpers" "^5.0.4"
-    "@turf/invariant" "^5.0.4"
-    "@turf/truncate" "^5.0.4"
+    "@turf/clean-coords" "^5.1.0"
+    "@turf/helpers" "^5.1.0"
+    "@turf/invariant" "^5.1.0"
+    "@turf/truncate" "^5.1.0"
     turf-jsts "*"
 
 "@turf/invariant@^4.7.3":
   version "4.7.3"
   resolved "https://registry.yarnpkg.com/@turf/invariant/-/invariant-4.7.3.tgz#538f367d23c113fc849d70c9a524b8563874601d"
 
-"@turf/invariant@^5.0.4", "@turf/invariant@^5.1.0":
+"@turf/invariant@^5.1.0":
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/@turf/invariant/-/invariant-5.1.0.tgz#3ab76ccc3ec46c3e479022a6b277b99f3f22b2cb"
   dependencies:
@@ -141,7 +141,7 @@
     "@turf/helpers" "^5.1.0"
     "@turf/invariant" "^5.1.0"
 
-"@turf/truncate@^5.0.4":
+"@turf/truncate@^5.1.0":
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/@turf/truncate/-/truncate-5.1.0.tgz#24f0281841aa53c8d315fdc07d809c1fc0a74699"
   dependencies:
@@ -2011,9 +2011,9 @@ eslint-scope@^3.7.1:
     esrecurse "^4.1.0"
     estraverse "^4.1.1"
 
-eslint@4.12.0:
-  version "4.12.0"
-  resolved "https://registry.yarnpkg.com/eslint/-/eslint-4.12.0.tgz#a7ce78eba8cc8f2443acfbbc870cc31a65135884"
+eslint@4.12.1:
+  version "4.12.1"
+  resolved "https://registry.yarnpkg.com/eslint/-/eslint-4.12.1.tgz#5ec1973822b4a066b353770c3c6d69a2a188e880"
   dependencies:
     ajv "^5.3.0"
     babel-code-frame "^6.22.0"

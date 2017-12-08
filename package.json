@@ -52,11 +52,11 @@
   "devDependencies": {
     "@mapbox/geojsonhint": "2.0.1",
     "@turf/area": "5.1.0",
-    "@turf/intersect": "5.0.5",
+    "@turf/intersect": "5.1.0",
     "commitizen": "2.9.6",
     "cz-conventional-changelog": "2.1.0",
     "documentation": "5.3.3",
-    "eslint": "4.12.0",
+    "eslint": "4.12.1",
     "eslint-config-airbnb-base": "12.1.0",
     "eslint-plugin-import": "2.8.0",
     "osrm": "5.14.1",

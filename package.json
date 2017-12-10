@@ -39,7 +39,7 @@
   },
   "dependencies": {
     "@turf/bbox": "5.1.0",
-    "@turf/destination": "5.1.0",
+    "@turf/destination": "5.1.5",
     "@turf/helpers": "5.1.0",
     "@turf/point-grid": "5.1.0",
     "concaveman": "1.1.1",

@@ -38,10 +38,10 @@
     "url": "https://github.com/stepankuzmin/node-isochrone/issues"
   },
   "dependencies": {
-    "@turf/bbox": "5.1.0",
-    "@turf/destination": "5.1.0",
+    "@turf/bbox": "5.1.5",
+    "@turf/destination": "5.1.5",
     "@turf/helpers": "5.1.4",
-    "@turf/point-grid": "5.1.0",
+    "@turf/point-grid": "5.1.5",
     "concaveman": "1.1.1",
     "geojson-rewind": "0.3.0",
     "turf-deintersect": "1.0.2"
@@ -51,8 +51,8 @@
   },
   "devDependencies": {
     "@mapbox/geojsonhint": "2.0.1",
-    "@turf/area": "5.1.0",
-    "@turf/intersect": "5.1.1",
+    "@turf/area": "5.1.5",
+    "@turf/intersect": "5.1.5",
     "commitizen": "2.9.6",
     "cz-conventional-changelog": "2.1.0",
     "documentation": "5.3.3",

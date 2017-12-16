@@ -40,7 +40,7 @@
   "dependencies": {
     "@turf/bbox": "5.1.5",
     "@turf/destination": "5.1.5",
-    "@turf/helpers": "5.1.4",
+    "@turf/helpers": "5.1.5",
     "@turf/point-grid": "5.1.5",
     "concaveman": "1.1.1",
     "geojson-rewind": "0.3.0",
@@ -55,12 +55,12 @@
     "@turf/intersect": "5.1.5",
     "commitizen": "2.9.6",
     "cz-conventional-changelog": "2.1.0",
-    "documentation": "5.3.4",
-    "eslint": "4.13.1",
+    "documentation": "5.3.5",
+    "eslint": "4.14.0",
     "eslint-config-airbnb-base": "12.1.0",
     "eslint-plugin-import": "2.8.0",
-    "osrm": "5.14.2",
-    "standard-version": "4.2.0",
+    "osrm": "5.14.3",
+    "standard-version": "4.3.0",
     "tape": "4.8.0"
   }
 }

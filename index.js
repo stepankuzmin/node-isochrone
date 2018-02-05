@@ -26,8 +26,7 @@ const groupByInterval = (destinations, intervals, travelTime) => {
   const groups = {};
   intervals.forEach((interval) => {
     const points = destinations
-      .filter((point, index) => (
-        travelTime[index] !== null && travelTime[index] <= interval * 60))
+      .filter((point, index) => travelTime[index] !== null && travelTime[index] <= interval * 60)
       .map(d => d.location);
 
     groups[interval] = points;
@@ -89,17 +88,16 @@ const makePolygons = (pointsByInterval, options) =>
  *     console.log(JSON.stringify(geojson));
  *   });
  */
-const isochrone = (startPoint, options) => {
-  const endPoints = makeGrid(startPoint, options);
-  const coordinates = [startPoint].concat(endPoints);
+const isochrone = (startPoint, options) =>
+  new Promise((resolve, reject) => {
+    try {
+      const endPoints = makeGrid(startPoint, options);
+      const coordinates = [startPoint].concat(endPoints);
+      options.osrm.table({ sources: [0], coordinates }, (error, table) => {
+        if (error) {
+          reject(error);
+        }
 
-  return new Promise((resolve, reject) => {
-    options.osrm.table({ sources: [0], coordinates }, (error, table) => {
-      if (error) {
-        reject(error);
-      }
-
-      try {
         const travelTime = table.durations[0] || [];
 
         const pointsByInterval = groupByInterval(table.destinations, options.intervals, travelTime);
@@ -109,11 +107,10 @@ const isochrone = (startPoint, options) => {
         const featureCollection = rewind(helpers.featureCollection(features));
 
         resolve(featureCollection);
-      } catch (e) {
-        reject(e);
-      }
-    });
+      });
+    } catch (e) {
+      reject(e);
+    }
   });
-};
 
 module.exports = isochrone;

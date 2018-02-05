@@ -94,17 +94,21 @@
     "@turf/helpers" "^5.1.5"
     "@turf/invariant" "^5.1.5"
 
-"@turf/helpers@5.1.5", "@turf/helpers@^5.1.5":
-  version "5.1.5"
-  resolved "https://registry.yarnpkg.com/@turf/helpers/-/helpers-5.1.5.tgz#153405227ab933d004a5bb9641a9ed999fcbe0cf"
+"@turf/helpers@6.0.0":
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/@turf/helpers/-/helpers-6.0.0.tgz#252031e6a61b6e0476af943dd0dac7121e316f89"
 
 "@turf/helpers@^4.7.3":
   version "4.7.3"
   resolved "https://registry.yarnpkg.com/@turf/helpers/-/helpers-4.7.3.tgz#bc312ac43cab3c532a483151c4c382c5649429e9"
 
-"@turf/intersect@5.1.5":
+"@turf/helpers@^5.1.5":
   version "5.1.5"
-  resolved "https://registry.yarnpkg.com/@turf/intersect/-/intersect-5.1.5.tgz#121261dafa847b5408d8245f1f55fdbb2f744b7a"
+  resolved "https://registry.yarnpkg.com/@turf/helpers/-/helpers-5.1.5.tgz#153405227ab933d004a5bb9641a9ed999fcbe0cf"
+
+"@turf/intersect@5.1.6":
+  version "5.1.6"
+  resolved "https://registry.yarnpkg.com/@turf/intersect/-/intersect-5.1.6.tgz#13ffcceb7a529c2a7e5d6681ab3ba671f868e95f"
   dependencies:
     "@turf/clean-coords" "^5.1.5"
     "@turf/helpers" "^5.1.5"
@@ -1829,9 +1833,9 @@ doctrine@1.5.0:
     esutils "^2.0.2"
     isarray "^1.0.0"
 
-doctrine@^2.0.2:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/doctrine/-/doctrine-2.0.2.tgz#68f96ce8efc56cc42651f1faadb4f175273b0075"
+doctrine@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/doctrine/-/doctrine-2.1.0.tgz#5cd01fc101621b42c4cd7f5d1a66243716d3f39d"
   dependencies:
     esutils "^2.0.2"
 
@@ -2021,9 +2025,9 @@ eslint-visitor-keys@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-1.0.0.tgz#3f3180fb2e291017716acb4c9d6d5b5c34a6a81d"
 
-eslint@4.14.0:
-  version "4.14.0"
-  resolved "https://registry.yarnpkg.com/eslint/-/eslint-4.14.0.tgz#96609768d1dd23304faba2d94b7fefe5a5447a82"
+eslint@4.17.0:
+  version "4.17.0"
+  resolved "https://registry.yarnpkg.com/eslint/-/eslint-4.17.0.tgz#dc24bb51ede48df629be7031c71d9dc0ee4f3ddf"
   dependencies:
     ajv "^5.3.0"
     babel-code-frame "^6.22.0"
@@ -2031,7 +2035,7 @@ eslint@4.14.0:
     concat-stream "^1.6.0"
     cross-spawn "^5.1.0"
     debug "^3.1.0"
-    doctrine "^2.0.2"
+    doctrine "^2.1.0"
     eslint-scope "^3.7.1"
     eslint-visitor-keys "^1.0.0"
     espree "^3.5.2"
@@ -3883,9 +3887,9 @@ osenv@^0.1.4:
     os-homedir "^1.0.0"
     os-tmpdir "^1.0.0"
 
-osrm@5.14.3:
-  version "5.14.3"
-  resolved "https://registry.yarnpkg.com/osrm/-/osrm-5.14.3.tgz#a6d79ff8c45764c5fa8b695ba1ad6d14547e50df"
+osrm@5.15.1:
+  version "5.15.1"
+  resolved "https://registry.yarnpkg.com/osrm/-/osrm-5.15.1.tgz#c6a2c190808e11854ccd031ca0ea1fa683ddf595"
   dependencies:
     nan "^2.6.2"
     node-cmake "^2.3.2"

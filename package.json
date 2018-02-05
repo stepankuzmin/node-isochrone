@@ -1,6 +1,6 @@
 {
   "name": "isochrone",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "isochrone map library",
   "author": "Stepan Kuzmin <to.stepan.kuzmin@gmail.com> (stepankuzmin.ru)",
   "homepage": "https://github.com/stepankuzmin/node-isochrone",

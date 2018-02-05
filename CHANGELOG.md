@@ -2,6 +2,39 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.0.2"></a>
+## [2.0.2](https://github.com/stepankuzmin/node-isochrone/compare/v2.0.1...v2.0.2) (2018-02-05)
+
+
+### Bug Fixes
+
+* **package:** update [@turf](https://github.com/turf)/bbox to version 4.6.0 ([12efd8c](https://github.com/stepankuzmin/node-isochrone/commit/12efd8c))
+* **package:** update [@turf](https://github.com/turf)/bbox to version 4.7.3 ([3365751](https://github.com/stepankuzmin/node-isochrone/commit/3365751))
+* **package:** update [@turf](https://github.com/turf)/bbox to version 5.0.4 ([b9171aa](https://github.com/stepankuzmin/node-isochrone/commit/b9171aa))
+* **package:** update [@turf](https://github.com/turf)/bbox to version 5.1.0 ([b53faf6](https://github.com/stepankuzmin/node-isochrone/commit/b53faf6))
+* **package:** update [@turf](https://github.com/turf)/bbox to version 5.1.5 ([04fed0b](https://github.com/stepankuzmin/node-isochrone/commit/04fed0b))
+* **package:** update [@turf](https://github.com/turf)/destination to version 4.6.0 ([caf0fed](https://github.com/stepankuzmin/node-isochrone/commit/caf0fed))
+* **package:** update [@turf](https://github.com/turf)/destination to version 4.7.3 ([40c8186](https://github.com/stepankuzmin/node-isochrone/commit/40c8186))
+* **package:** update [@turf](https://github.com/turf)/destination to version 5.0.4 ([c0c1ee8](https://github.com/stepankuzmin/node-isochrone/commit/c0c1ee8))
+* **package:** update [@turf](https://github.com/turf)/destination to version 5.1.0 ([db65b78](https://github.com/stepankuzmin/node-isochrone/commit/db65b78))
+* **package:** update [@turf](https://github.com/turf)/destination to version 5.1.5 ([a866ce1](https://github.com/stepankuzmin/node-isochrone/commit/a866ce1))
+* **package:** update [@turf](https://github.com/turf)/helpers to version 4.6.0 ([099e56d](https://github.com/stepankuzmin/node-isochrone/commit/099e56d))
+* **package:** update [@turf](https://github.com/turf)/point-grid to version 5.1.0 ([9da0702](https://github.com/stepankuzmin/node-isochrone/commit/9da0702))
+* properly handle errors ([43f8532](https://github.com/stepankuzmin/node-isochrone/commit/43f8532))
+* **package:** update [@turf](https://github.com/turf)/helpers to version 4.7.3 ([4e27f8c](https://github.com/stepankuzmin/node-isochrone/commit/4e27f8c))
+* **package:** update [@turf](https://github.com/turf)/helpers to version 5.0.4 ([38dc2ec](https://github.com/stepankuzmin/node-isochrone/commit/38dc2ec))
+* **package:** update [@turf](https://github.com/turf)/helpers to version 5.1.0 ([0f2674f](https://github.com/stepankuzmin/node-isochrone/commit/0f2674f))
+* **package:** update [@turf](https://github.com/turf)/helpers to version 5.1.4 ([14def13](https://github.com/stepankuzmin/node-isochrone/commit/14def13))
+* **package:** update [@turf](https://github.com/turf)/helpers to version 6.0.0-beta.1 ([2f47fa8](https://github.com/stepankuzmin/node-isochrone/commit/2f47fa8))
+* **package:** update [@turf](https://github.com/turf)/helpers to version 6.0.0-beta.4 ([fc1139c](https://github.com/stepankuzmin/node-isochrone/commit/fc1139c))
+* **package:** update [@turf](https://github.com/turf)/point-grid to version 4.6.0 ([197ad3f](https://github.com/stepankuzmin/node-isochrone/commit/197ad3f))
+* **package:** update [@turf](https://github.com/turf)/point-grid to version 4.7.3 ([9d8c894](https://github.com/stepankuzmin/node-isochrone/commit/9d8c894))
+* **package:** update [@turf](https://github.com/turf)/point-grid to version 5.0.0 ([0505a3d](https://github.com/stepankuzmin/node-isochrone/commit/0505a3d))
+* **package:** update [@turf](https://github.com/turf)/point-grid to version 5.0.4 ([39407a0](https://github.com/stepankuzmin/node-isochrone/commit/39407a0))
+* **package:** update [@turf](https://github.com/turf)/point-grid to version 5.1.5 ([aca7b85](https://github.com/stepankuzmin/node-isochrone/commit/aca7b85))
+
+
+
 <a name="2.0.1"></a>
 ## [2.0.1](https://github.com/stepankuzmin/node-isochrone/compare/v2.0.0...v2.0.1) (2017-07-17)
 

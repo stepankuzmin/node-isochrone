@@ -43,7 +43,7 @@
     "@turf/helpers": "6.0.1",
     "@turf/point-grid": "5.1.5",
     "concaveman": "1.1.1",
-    "geojson-rewind": "0.3.0",
+    "geojson-rewind": "0.3.1",
     "turf-deintersect": "1.0.2"
   },
   "peerDependencies": {

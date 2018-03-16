@@ -50,7 +50,7 @@
     "osrm": "^5.0"
   },
   "devDependencies": {
-    "@mapbox/geojsonhint": "2.0.1",
+    "@mapbox/geojsonhint": "2.1.0",
     "@turf/area": "5.1.5",
     "@turf/intersect": "5.1.6",
     "commitizen": "2.9.6",

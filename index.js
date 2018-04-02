@@ -1,9 +1,9 @@
-const bbox = require('@turf/bbox');
+const bbox = require('@turf/bbox').default;
 const concaveman = require('concaveman');
 const deintersect = require('turf-deintersect');
-const destination = require('@turf/destination');
+const destination = require('@turf/destination').default;
 const helpers = require('@turf/helpers');
-const pointGrid = require('@turf/point-grid');
+const pointGrid = require('@turf/point-grid').default;
 const rewind = require('geojson-rewind');
 
 const makeGrid = (startPoint, options) => {

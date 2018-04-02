@@ -20,7 +20,7 @@
   },
   "engine-strict": true,
   "engines": {
-    "node": ">=6"
+    "node": ">=8"
   },
   "keywords": [
     "isochrone",
@@ -38,28 +38,28 @@
     "url": "https://github.com/stepankuzmin/node-isochrone/issues"
   },
   "dependencies": {
-    "@turf/bbox": "5.1.5",
-    "@turf/destination": "5.1.5",
-    "@turf/helpers": "6.1.0",
-    "@turf/point-grid": "5.1.5",
+    "@turf/bbox": "6.0.0",
+    "@turf/destination": "6.0.0",
+    "@turf/helpers": "6.1.1",
+    "@turf/point-grid": "6.0.0",
     "concaveman": "1.1.1",
     "geojson-rewind": "0.3.1",
-    "turf-deintersect": "1.0.2"
+    "turf-deintersect": "1.0.3"
   },
   "peerDependencies": {
-    "osrm": "^5.0"
+    "osrm": "^5.16.4"
   },
   "devDependencies": {
     "@mapbox/geojsonhint": "2.1.0",
-    "@turf/area": "5.1.5",
-    "@turf/intersect": "5.1.6",
+    "@turf/area": "6.0.0",
+    "@turf/intersect": "6.1.0",
     "commitizen": "2.9.6",
     "cz-conventional-changelog": "2.1.0",
-    "documentation": "5.4.0",
+    "documentation": "6.1.0",
     "eslint": "4.19.1",
     "eslint-config-airbnb-base": "12.1.0",
-    "eslint-plugin-import": "2.9.0",
-    "osrm": "5.15.2",
+    "eslint-plugin-import": "2.10.0",
+    "osrm": "5.16.4",
     "standard-version": "4.3.0",
     "tape": "4.9.0"
   }

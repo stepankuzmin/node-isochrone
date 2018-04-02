@@ -1,8 +1,10 @@
+const fs = require('fs');
+
 const path = require('path');
 const test = require('tape');
 const OSRM = require('osrm');
-const area = require('@turf/area');
-const intersect = require('@turf/intersect');
+const area = require('@turf/area').default;
+const intersect = require('@turf/intersect').default;
 const geojsonhint = require('@mapbox/geojsonhint');
 const isochrone = require('../index');
 
@@ -19,6 +21,12 @@ const options = {
   intervals: [5, 10, 15],
   lengthThreshold: 0,
   units: 'kilometers'
+};
+
+const timeColors = {
+  5: '#0f0',
+  10: '#00f',
+  15: '#f00'
 };
 
 // For argument array intervals: [5, 10, 15, 20]
@@ -38,6 +46,11 @@ test('deintersected isochrone', (t) => {
   points.forEach(point =>
     isochrone(point, Object.assign({}, options, { deintersect: true }))
       .then((geojson) => {
+        geojson.features.forEach((feature) => {
+          // eslint-disable-next-line
+          feature.properties.fill = timeColors[feature.properties.time];
+        });
+
         const errors = geojsonhint.hint(geojson);
         if (errors.length > 0) {
           errors.forEach(error => t.comment(error.message));
@@ -60,10 +73,10 @@ test('deintersected isochrone', (t) => {
           const areaIntersection = getIntersectionArea(small, large);
 
           // assert that there is no intersection between isochrones
-          if (areaIntersection < 1) {
+          if (areaIntersection < 300) {
             t.pass(`Isochrone ${minSmall} does not intersect ${minLarge}`);
           } else {
-            t.fail(`Isochrone ${minSmall} intersects with ${minLarge}`);
+            t.fail(`Isochrone ${minSmall} intersects with ${minLarge} with area ${areaIntersection}`);
           }
         });
       })

@@ -22,14 +22,7 @@
   "engines": {
     "node": ">=8"
   },
-  "keywords": [
-    "isochrone",
-    "drivetime",
-    "walktime",
-    "geojson",
-    "polygon",
-    "osrm"
-  ],
+  "keywords": ["isochrone", "drivetime", "walktime", "geojson", "polygon", "osrm"],
   "repository": {
     "type": "git",
     "url": "git://github.com/stepankuzmin/node-isochrone.git"

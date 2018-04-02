@@ -1,6 +1,6 @@
 {
   "name": "isochrone",
-  "version": "2.0.2",
+  "version": "3.0.0",
   "description": "isochrone map library",
   "author": "Stepan Kuzmin <to.stepan.kuzmin@gmail.com> (stepankuzmin.ru)",
   "homepage": "https://github.com/stepankuzmin/node-isochrone",
@@ -22,7 +22,14 @@
   "engines": {
     "node": ">=8"
   },
-  "keywords": ["isochrone", "drivetime", "walktime", "geojson", "polygon", "osrm"],
+  "keywords": [
+    "isochrone",
+    "drivetime",
+    "walktime",
+    "geojson",
+    "polygon",
+    "osrm"
+  ],
   "repository": {
     "type": "git",
     "url": "git://github.com/stepankuzmin/node-isochrone.git"

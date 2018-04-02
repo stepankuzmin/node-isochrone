@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.0.0"></a>
+# [3.0.0](https://github.com/stepankuzmin/node-isochrone/compare/v2.0.2...v3.0.0) (2018-04-02)
+
+
+### Bug Fixes
+
+* **package:** update [@turf](https://github.com/turf)/helpers to version 6.0.1 ([907a4b4](https://github.com/stepankuzmin/node-isochrone/commit/907a4b4))
+* **package:** update [@turf](https://github.com/turf)/helpers to version 6.1.0 ([30d51c2](https://github.com/stepankuzmin/node-isochrone/commit/30d51c2))
+* **package:** update geojson-rewind to version 0.3.1 ([67efc27](https://github.com/stepankuzmin/node-isochrone/commit/67efc27))
+
+
+### Features
+
+* update OSRM, drop node v6 support ([d3d05c3](https://github.com/stepankuzmin/node-isochrone/commit/d3d05c3))
+
+
+### BREAKING CHANGES
+
+* drop node v6 support
+
+
+
 <a name="2.0.2"></a>
 ## [2.0.2](https://github.com/stepankuzmin/node-isochrone/compare/v2.0.1...v2.0.2) (2018-02-05)
 

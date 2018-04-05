@@ -52,7 +52,7 @@
   "devDependencies": {
     "@mapbox/geojsonhint": "2.1.0",
     "@turf/area": "6.0.0",
-    "@turf/intersect": "6.1.0",
+    "@turf/intersect": "6.1.1",
     "commitizen": "2.9.6",
     "cz-conventional-changelog": "2.1.0",
     "documentation": "6.1.0",

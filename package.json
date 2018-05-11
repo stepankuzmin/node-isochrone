@@ -7,7 +7,7 @@
   "license": "MIT",
   "main": "index.js",
   "scripts": {
-    "commit": "git-cz",
+    "cz": "git-cz",
     "docs": "documentation build index.js -g --markdown-toc false -f md -o API.md",
     "lint": "eslint .",
     "release": "standard-version",
@@ -38,10 +38,10 @@
     "url": "https://github.com/stepankuzmin/node-isochrone/issues"
   },
   "dependencies": {
-    "@turf/bbox": "6.0.0",
-    "@turf/destination": "6.0.0",
-    "@turf/helpers": "6.1.1",
-    "@turf/point-grid": "6.0.0",
+    "@turf/bbox": "6.0.1",
+    "@turf/destination": "6.0.1",
+    "@turf/helpers": "6.1.3",
+    "@turf/point-grid": "6.0.1",
     "concaveman": "1.1.1",
     "geojson-rewind": "0.3.1",
     "turf-deintersect": "1.0.3"
@@ -51,15 +51,15 @@
   },
   "devDependencies": {
     "@mapbox/geojsonhint": "2.1.0",
-    "@turf/area": "6.0.0",
-    "@turf/intersect": "6.1.0",
+    "@turf/area": "6.0.1",
+    "@turf/intersect": "6.1.2",
     "commitizen": "2.9.6",
     "cz-conventional-changelog": "2.1.0",
-    "documentation": "6.1.0",
+    "documentation": "6.3.2",
     "eslint": "4.19.1",
     "eslint-config-airbnb-base": "12.1.0",
-    "eslint-plugin-import": "2.10.0",
-    "osrm": "5.16.4",
+    "eslint-plugin-import": "2.11.0",
+    "osrm": "5.18.0",
     "standard-version": "4.3.0",
     "tape": "4.9.0"
   }

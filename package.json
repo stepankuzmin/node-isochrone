@@ -55,7 +55,7 @@
     "@turf/intersect": "6.1.2",
     "commitizen": "2.9.6",
     "cz-conventional-changelog": "2.1.0",
-    "documentation": "6.3.2",
+    "documentation": "6.3.3",
     "eslint": "4.19.1",
     "eslint-config-airbnb-base": "12.1.0",
     "eslint-plugin-import": "2.11.0",

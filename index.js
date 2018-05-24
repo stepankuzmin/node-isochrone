@@ -100,13 +100,18 @@ const isochrone = (startPoint, options) =>
 
         const travelTime = table.durations[0] || [];
 
-        const pointsByInterval = groupByInterval(table.destinations, options.intervals, travelTime);
-        const polygons = makePolygons(pointsByInterval, options);
+        try {
+          const pointsByInterval = groupByInterval(table.destinations, options.intervals, travelTime);
+          const polygons = makePolygons(pointsByInterval, options);
 
-        const features = options.deintersect ? deintersect(polygons) : polygons;
-        const featureCollection = rewind(helpers.featureCollection(features));
+          const features = options.deintersect ? deintersect(polygons) : polygons;
+          const featureCollection = rewind(helpers.featureCollection(features));
 
-        resolve(featureCollection);
+          resolve(featureCollection);
+        }
+        catch (e) {
+          reject(e);
+        }
       });
     } catch (e) {
       reject(e);

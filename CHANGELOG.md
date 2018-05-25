@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.0.1"></a>
+## [3.0.1](https://github.com/stepankuzmin/node-isochrone/compare/v3.0.0...v3.0.1) (2018-05-25)
+
+
+### Bug Fixes
+
+* Add extra catch for empty polygons ([1f4e521](https://github.com/stepankuzmin/node-isochrone/commit/1f4e521))
+
+
+
 <a name="3.0.0"></a>
 # [3.0.0](https://github.com/stepankuzmin/node-isochrone/compare/v2.0.2...v3.0.0) (2018-04-02)
 

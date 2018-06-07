@@ -2,27 +2,27 @@
 
 ## isochrone
 
-[index.js:92-117](https://github.com/stepankuzmin/node-isochrone/blob/18be5c027ae4d71c6dc92db5008d844195b3f8b7/index.js#L92-L117 "Source code on GitHub")
+[index.js:91-119][1]
 
 Build isochrone using start point and options
 
 **Parameters**
 
--   `startPoint` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;float>** start point [lng, lat]
--   `options` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** object
-    -   `options.osrm` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** [OSRM](https://github.com/Project-OSRM/osrm-backend) instance
-    -   `options.radius` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** distance to draw the buffer as in
-        [@turf/buffer](https://github.com/Turfjs/turf/tree/master/packages/turf-buffer)
-    -   `options.cellSize` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** the distance across each cell as in
-        [@turf/point-grid](https://github.com/Turfjs/turf/tree/master/packages/turf-point-grid)
-    -   `options.intervals` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)>** intervals for isochrones in minutes
-    -   `options.deintersect` **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** whether or not to deintersect the isochrones.
+-   `startPoint` **[Array][2]&lt;float>** start point [lng, lat]
+-   `options` **[Object][3]** object
+    -   `options.osrm` **[Object][3]** [OSRM][4] instance
+    -   `options.radius` **[number][5]** distance to draw the buffer as in
+        [@turf/buffer][6]
+    -   `options.cellSize` **[number][5]** the distance across each cell as in
+        [@turf/point-grid][7]
+    -   `options.intervals` **[Array][2]&lt;[number][5]>** intervals for isochrones in minutes
+    -   `options.deintersect` **[boolean][8]** whether or not to deintersect the isochrones.
         If this is true, then the isochrones will be mutually exclusive
-    -   `options.concavity` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** relative measure of concavity as in
-        [concaveman](https://github.com/mapbox/concaveman) (optional, default `2`)
-    -   `options.lengthThreshold` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** length threshold as in
-        [concaveman](https://github.com/mapbox/concaveman) (optional, default `0`)
-    -   `options.units` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** any of the options supported by turf units (optional, default `'kilometers'`)
+    -   `options.concavity` **[number][5]** relative measure of concavity as in
+        [concaveman][9] (optional, default `2`)
+    -   `options.lengthThreshold` **[number][5]** length threshold as in
+        [concaveman][9] (optional, default `0`)
+    -   `options.units` **[string][10]** any of the options supported by turf units (optional, default `'kilometers'`)
 
 **Examples**
 
@@ -47,4 +47,26 @@ isochrone(startPoint, options)
   });
 ```
 
-Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)** GeoJSON FeatureCollection of Polygons when resolved
+Returns **[Promise][11]** GeoJSON FeatureCollection of Polygons when resolved
+
+[1]: https://github.com/stepankuzmin/node-isochrone/blob/a785ee56726846ff0dac83c20213f9b493eb01aa/index.js#L91-L119 "Source code on GitHub"
+
+[2]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array
+
+[3]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
+
+[4]: https://github.com/Project-OSRM/osrm-backend
+
+[5]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+
+[6]: https://github.com/Turfjs/turf/tree/master/packages/turf-buffer
+
+[7]: https://github.com/Turfjs/turf/tree/master/packages/turf-point-grid
+
+[8]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean
+
+[9]: https://github.com/mapbox/concaveman
+
+[10]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+
+[11]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise

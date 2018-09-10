@@ -6,7 +6,7 @@
 
 Build isochrone using start point and options
 
-**Parameters**
+### Parameters
 
 -   `startPoint` **[Array][2]&lt;float>** start point [lng, lat]
 -   `options` **[Object][3]** object
@@ -24,7 +24,7 @@ Build isochrone using start point and options
         [concaveman][9] (optional, default `0`)
     -   `options.units` **[string][10]** any of the options supported by turf units (optional, default `'kilometers'`)
 
-**Examples**
+### Examples
 
 ```javascript
 const OSRM = require('osrm');
@@ -49,7 +49,7 @@ isochrone(startPoint, options)
 
 Returns **[Promise][11]** GeoJSON FeatureCollection of Polygons when resolved
 
-[1]: https://github.com/stepankuzmin/node-isochrone/blob/a785ee56726846ff0dac83c20213f9b493eb01aa/index.js#L91-L119 "Source code on GitHub"
+[1]: https://github.com/stepankuzmin/node-isochrone/blob/3dc588a2f3a3b21db10e751150d41e318866fa27/index.js#L91-L119 "Source code on GitHub"
 
 [2]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array
 

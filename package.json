@@ -44,7 +44,7 @@
     "@turf/point-grid": "6.0.1",
     "concaveman": "1.1.1",
     "geojson-rewind": "0.3.1",
-    "turf-deintersect": "1.0.3"
+    "turf-deintersect": "1.0.4"
   },
   "peerDependencies": {
     "osrm": "^5.16.4"
@@ -56,10 +56,10 @@
     "commitizen": "2.10.1",
     "cz-conventional-changelog": "2.1.0",
     "documentation": "8.1.2",
-    "eslint": "4.19.1",
+    "eslint": "5.6.0",
     "eslint-config-airbnb-base": "13.1.0",
     "eslint-plugin-import": "2.14.0",
-    "osrm": "5.18.0",
+    "osrm": "5.19.0",
     "standard-version": "4.4.0",
     "tape": "4.9.1"
   }

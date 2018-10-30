@@ -15,8 +15,20 @@
   },
   "config": {
     "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
+      "path": "cz-conventional-changelog"
     }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier-eslint --write",
+      "yarn lint",
+      "git add"
+    ]
   },
   "engine-strict": true,
   "engines": {
@@ -53,13 +65,19 @@
     "@mapbox/geojsonhint": "2.1.0",
     "@turf/area": "6.0.1",
     "@turf/intersect": "6.1.3",
-    "commitizen": "3.0.3",
+    "commitizen": "3.0.4",
     "cz-conventional-changelog": "2.1.0",
     "documentation": "8.1.2",
-    "eslint": "5.6.0",
+    "eslint": "5.8.0",
     "eslint-config-airbnb-base": "13.1.0",
+    "eslint-config-prettier": "3.1.0",
     "eslint-plugin-import": "2.14.0",
+    "husky": "1.1.2",
+    "lint-staged": "8.0.3",
     "osrm": "5.19.0",
+    "prettier": "1.14.3",
+    "prettier-eslint": "8.8.2",
+    "prettier-eslint-cli": "4.7.1",
     "standard-version": "4.4.0",
     "tape": "4.9.1"
   }

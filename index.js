@@ -24,7 +24,7 @@ const makeGrid = (startPoint, options) => {
 
 const groupByInterval = (destinations, intervals, travelTime) => {
   const groups = {};
-  intervals.forEach((interval) => {
+  intervals.forEach(interval => {
     const points = destinations
       .filter((point, index) => travelTime[index] !== null && travelTime[index] <= interval * 60)
       .map(d => d.location);
@@ -101,15 +101,19 @@ const isochrone = (startPoint, options) =>
         const travelTime = table.durations[0] || [];
 
         try {
-          const pointsByInterval = groupByInterval(table.destinations, options.intervals, travelTime);
+          const pointsByInterval = groupByInterval(
+            table.destinations,
+            options.intervals,
+            travelTime
+          );
+
           const polygons = makePolygons(pointsByInterval, options);
 
           const features = options.deintersect ? deintersect(polygons) : polygons;
           const featureCollection = rewind(helpers.featureCollection(features));
 
           resolve(featureCollection);
-        }
-        catch (e) {
+        } catch (e) {
           reject(e);
         }
       });

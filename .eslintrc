@@ -1,13 +1,13 @@
 {
-  "extends": "airbnb-base",
-  "plugins": [
-    "import"
-  ],
+  "extends": ["airbnb-base", "prettier"],
+  "plugins": ["import"],
   "env": {
     "es6": true,
     "node": true
   },
   "rules": {
-    "comma-dangle": ["error", "never"]
+    "comma-dangle": ["error", "never"],
+    "max-len": ["error", { "code": 100, "ignoreUrls": true }],
+    "quotes": ["error", "single"]
   }
 }

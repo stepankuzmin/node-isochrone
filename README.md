@@ -7,30 +7,39 @@
 Isochrone maps are commonly used to depict areas of equal travel time.
 Build isochrones using [OSRM](http://project-osrm.org/), [Turf](http://turfjs.org/) and [concaveman](https://github.com/mapbox/concaveman).
 
-![Screenshot](https://raw.githubusercontent.com/stepankuzmin/galton/master/example.png)
+![screenshot](https://raw.githubusercontent.com/stepankuzmin/galton/master/example.png)
 
 ## Installation
 
-```
-npm install -g isochrone
-```
-
-## Build graph
-
-```shell
-wget https://s3.amazonaws.com/metro-extracts.mapzen.com/moscow_russia.osm.pbf
-./node_modules/osrm/lib/binding/osrm-extract -p ./node_modules/osrm/profiles/foot.lua moscow_russia.osm.pbf
-./node_modules/osrm/lib/binding/osrm-contract moscow_russia.osrm
+```sh
+npm install isochrone
 ```
 
 ## Usage
 
-```js
-const OSRM = require('osrm');
-const isochrone = require('isochrone');
+### Building OSRM graph
 
-const osrm = new OSRM({ algorithm: 'CH', path: './moscow_russia.osrm' });
-const startPoint = [37.62, 55.75];
+This package consumes preprocessed [OSRM](http://project-osrm.org/) graph as an input. To build such a graph you have to extract it from your OSM file with one of [profiles](https://github.com/Project-OSRM/osrm-backend/wiki/Profiles) and build it using one of the algorithms (Contraction Hierarchies or Multi-Level Dijkstra).
+
+For example, here we are downloading OSM data, extracting graph using `foot` profile and building graph using contraction hierarchies algorithm.
+
+```sh
+wget https://s3.amazonaws.com/mapbox/osrm/testing/monaco.osm.pbf
+npm run extract -- -p ./node_modules/osrm/profiles/foot.lua monaco.osm.pbf
+npm run contract -- monaco.osrm
+```
+
+### Example
+
+See [API](https://github.com/stepankuzmin/node-isochrone/blob/master/API.md) for more info.
+
+```js
+const OSRM = require("osrm");
+const isochrone = require("isochrone");
+
+const osrm = new OSRM({ path: "./monaco.osrm" });
+
+const startPoint = [7.42063, 43.73104];
 
 const options = {
   osrm,
@@ -39,14 +48,7 @@ const options = {
   intervals: [5, 10, 15]
 };
 
-isochrone(startPoint, options)
-  .then((geojson) => {
-    console.log(JSON.stringify(geojson, null, 2));
-  })
-  .catch((error) => {
-    console.error(error);
-  });
-
+isochrone(startPoint, options).then(geojson => {
+  console.log(JSON.stringify(geojson, null, 2));
+});
 ```
-
-See [API](https://github.com/stepankuzmin/node-isochrone/blob/master/API.md) for more info.

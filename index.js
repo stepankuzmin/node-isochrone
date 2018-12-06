@@ -22,17 +22,18 @@ const makeGrid = (startPoint, options) => {
   return grid.features.map(feature => feature.geometry.coordinates);
 };
 
-const groupByInterval = (destinations, intervals, travelTime) => {
-  const groups = {};
-  intervals.forEach(interval => {
-    const points = destinations
-      .filter((point, index) => travelTime[index] !== null && travelTime[index] <= interval * 60)
-      .map(d => d.location);
+const groupByInterval = (destinations, intervals, travelTime) =>
+  intervals.reduce((pointsByInterval, interval) => {
+    const intervalInSeconds = interval * 60;
+    pointsByInterval[interval] = destinations.reduce((acc, point, index) => {
+      if (travelTime[index] !== null && travelTime[index] <= intervalInSeconds) {
+        acc.push(point.location);
+      }
+      return acc;
+    }, []);
 
-    groups[interval] = points;
-  });
-  return groups;
-};
+    return pointsByInterval;
+  }, {});
 
 const makePolygon = (points, interval, options) => {
   const concave = concaveman(points, options.concavity, options.lengthThreshold);
@@ -79,8 +80,7 @@ const makePolygons = (pointsByInterval, options) =>
  *   osrm,
  *   radius: 2,
  *   cellSize: 0.1,
- *   intervals: [5, 10, 15],
- *   deintersect: true
+ *   intervals: [5, 10, 15]
  * };
  *
  * isochrone(startPoint, options)
@@ -100,25 +100,17 @@ const isochrone = (startPoint, options) =>
 
         const travelTime = table.durations[0] || [];
 
-        try {
-          const pointsByInterval = groupByInterval(
-            table.destinations,
-            options.intervals,
-            travelTime
-          );
+        const pointsByInterval = groupByInterval(table.destinations, options.intervals, travelTime);
 
-          const polygons = makePolygons(pointsByInterval, options);
+        const polygons = makePolygons(pointsByInterval, options);
 
-          const features = options.deintersect ? deintersect(polygons) : polygons;
-          const featureCollection = rewind(helpers.featureCollection(features));
+        const features = options.deintersect ? deintersect(polygons) : polygons;
+        const featureCollection = rewind(helpers.featureCollection(features));
 
-          resolve(featureCollection);
-        } catch (e) {
-          reject(e);
-        }
+        resolve(featureCollection);
       });
-    } catch (e) {
-      reject(e);
+    } catch (error) {
+      reject(error);
     }
   });
 

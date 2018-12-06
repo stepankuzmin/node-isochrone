@@ -1,13 +1,11 @@
 {
   "extends": ["airbnb-base", "prettier"],
   "plugins": ["import"],
-  "env": {
-    "es6": true,
-    "node": true
-  },
   "rules": {
+    "arrow-parens": ["warn", "as-needed", { "requireForBlockBody": true }],
     "comma-dangle": ["error", "never"],
     "max-len": ["error", { "code": 100, "ignoreUrls": true }],
+    "no-param-reassign": "off",
     "quotes": ["error", "single"]
   }
 }

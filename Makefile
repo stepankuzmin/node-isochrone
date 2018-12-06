@@ -1,5 +1,5 @@
 all:
-	yarn
+	npm i
 
 clean:
 	rm -rf node_modules
@@ -8,6 +8,6 @@ shm:
 	$(MAKE) all -i -C ./test/data
 
 test: shm
-	yarn test
+	npm test
 
 .PHONY: test clean shm

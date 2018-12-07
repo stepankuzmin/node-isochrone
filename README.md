@@ -2,7 +2,7 @@
 
 [![npm version](https://img.shields.io/npm/v/isochrone.svg)](https://www.npmjs.com/package/isochrone)
 [![npm downloads](https://img.shields.io/npm/dt/isochrone.svg)](https://www.npmjs.com/package/isochrone)
-[![Build Status](https://travis-ci.org/stepankuzmin/node-isochrone.svg?branch=master)](https://travis-ci.org/stepankuzmin/node-isochrone)
+[![Build Status](https://travis-ci.com/stepankuzmin/node-isochrone.svg?branch=master)](https://travis-ci.com/stepankuzmin/node-isochrone)
 
 Isochrone maps are commonly used to depict areas of equal travel time.
 Build isochrones using [OSRM](http://project-osrm.org/), [Turf](http://turfjs.org/) and [concaveman](https://github.com/mapbox/concaveman).
@@ -12,7 +12,7 @@ Build isochrones using [OSRM](http://project-osrm.org/), [Turf](http://turfjs.or
 ## Installation
 
 ```sh
-npm install isochrone
+npm install osrm isochrone
 ```
 
 ## Usage
@@ -25,8 +25,8 @@ For example, here we are downloading OSM data, extracting graph using `foot` pro
 
 ```sh
 wget https://s3.amazonaws.com/mapbox/osrm/testing/monaco.osm.pbf
-npm run extract -- -p ./node_modules/osrm/profiles/foot.lua monaco.osm.pbf
-npm run contract -- monaco.osrm
+./node_modules/osrm/lib/binding/osrm-extract -p ./node_modules/osrm/profiles/foot.lua monaco.osm.pbf
+./node_modules/osrm/lib/binding/osrm-contract monaco.osrm
 ```
 
 ### Example

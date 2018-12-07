@@ -7,7 +7,7 @@
   "license": "MIT",
   "main": "index.js",
   "scripts": {
-    "extract": "node_modules/osrm/lib/binding/osrm-extract",
+    "extract": "./node_modules/osrm/lib/binding/osrm-extract",
     "contract": "./node_modules/osrm/lib/binding/osrm-contract",
     "cz": "git-cz",
     "docs": "documentation build index.js -g --markdown-toc false -f md -o API.md",

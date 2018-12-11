@@ -21,7 +21,15 @@ npm install osrm isochrone
 
 This package consumes preprocessed [OSRM](http://project-osrm.org/) graph as an input. To build such a graph you have to extract it from your OSM file with one of [profiles](https://github.com/Project-OSRM/osrm-backend/wiki/Profiles) and build it using one of the algorithms (Contraction Hierarchies or Multi-Level Dijkstra).
 
-For example, here we are downloading OSM data, extracting graph using `foot` profile and building graph using contraction hierarchies algorithm.
+To build OSRM graph using `isochrone` package, you can clone the source code and install dependencies
+
+```sh
+git clone https://github.com/stepankuzmin/node-isochrone.git
+cd node-isochrone
+npm i
+```
+
+Here is an example of how to extract graph using `foot` profile and build it using contraction hierarchies algorithm.
 
 ```sh
 wget https://s3.amazonaws.com/mapbox/osrm/testing/monaco.osm.pbf

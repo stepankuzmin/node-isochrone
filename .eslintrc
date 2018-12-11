@@ -4,7 +4,10 @@
   "rules": {
     "arrow-parens": ["warn", "as-needed", { "requireForBlockBody": true }],
     "comma-dangle": ["error", "never"],
-    "max-len": ["error", { "code": 100, "ignoreUrls": true }],
+    "max-len": [
+      "error",
+      { "code": 100, "ignoreComments": true, "ignoreUrls": true }
+    ],
     "no-param-reassign": "off",
     "quotes": ["error", "single"]
   }

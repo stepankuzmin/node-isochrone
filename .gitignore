@@ -3,6 +3,9 @@ node_modules/
 npm-debug.log
 yarn-error.log
 
+tmp
+*.geojson
+
 test/data/*
 !test/data/Makefile
 !test/data/data.md5sum

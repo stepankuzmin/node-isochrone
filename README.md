@@ -12,7 +12,7 @@ Build isochrones using [OSRM](http://project-osrm.org/), [Turf](http://turfjs.or
 ## Installation
 
 ```sh
-npm install osrm isochrone
+npm install @project-osrm/osrm isochrone
 ```
 
 ## Usage
@@ -42,7 +42,7 @@ wget https://s3.amazonaws.com/mapbox/osrm/testing/monaco.osm.pbf
 See [API](https://github.com/stepankuzmin/node-isochrone/blob/master/API.md) for more info.
 
 ```js
-const OSRM = require("osrm");
+const OSRM = require("@project-osrm/osrm");
 const isochrone = require("isochrone");
 
 const osrm = new OSRM({ path: "./monaco.osrm" });
